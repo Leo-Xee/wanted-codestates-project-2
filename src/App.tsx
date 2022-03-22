@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@/pages/Home";
 import UserDetail from "@/pages/UserDetail";
-import NavBar from "@/components/common/NavBar";
+import Ranking from "@/pages/Ranking";
 import Header from "./components/common/Header";
+import NavBar from "./components/common/NavBar";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user" element={<UserDetail />} />
+        <Route path="/ranking" element={<Ranking />} />
       </Routes>
     </BrowserRouter>
   );

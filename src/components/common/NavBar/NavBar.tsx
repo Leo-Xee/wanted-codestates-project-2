@@ -8,7 +8,7 @@ function NavBar() {
 
   const tabs = [
     { title: "홈", path: "/" },
-    { title: "랭킹", path: "/user" },
+    { title: "랭킹", path: "/ranking" },
     { title: "카트", path: "/" },
     { title: "트랙", path: "/" },
   ];
