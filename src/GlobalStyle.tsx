@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
   table {border-spacing:0;border-collapse:collapse}
 
   * { font-family: 'Noto Sans KR', sans-serif; }
+
+  :root {
+    --fontSize-regular: 16px;
+  }
 `;
 
 export default GlobalStyle;
