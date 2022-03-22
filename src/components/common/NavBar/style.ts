@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  background-color: transparent;
+  /* opacity: 0.3; */
 `;
 
 export const Nav = styled.ul`
@@ -25,6 +27,7 @@ export const Nav = styled.ul`
     width: 80px;
     height: 55px;
     opacity: 0.3;
+    z-index: 20;
 
     &::after {
       content: "";
