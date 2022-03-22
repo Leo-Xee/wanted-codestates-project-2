@@ -14,7 +14,9 @@ const GlobalStyle = createGlobalStyle`
   * { font-family: 'Noto Sans KR', sans-serif; }
 
   :root {
-    --fontSize-regular: 16px;
+    --color-primary: #005fcc;
+    --color-white: #ffffff;
+    --color-gray: #6c7a89;
   }
 `;
 
