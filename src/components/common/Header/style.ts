@@ -34,4 +34,5 @@ export const HeadRight = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--color-gray);
+  letter-spacing: -1px;
 `;
