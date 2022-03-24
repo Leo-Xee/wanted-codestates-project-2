@@ -7,6 +7,7 @@ export const Container = styled.header`
 
 export const Head = styled.div`
   max-width: 1300px;
+  min-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -18,6 +19,7 @@ export const HeadLeft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
 
   & img {
     width: 75px;
@@ -33,6 +35,7 @@ export const HeadRight = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 5px;
   color: var(--color-gray);
   letter-spacing: -1px;
 `;
