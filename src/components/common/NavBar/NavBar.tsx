@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import * as S from "./style";
 
 function NavBar() {
   const [currentTab, setCurrentTab] = useState("홈");
+  const { pathname } = useLocation();
 
   const tabs = [
     { title: "홈", path: "/" },
@@ -20,8 +21,10 @@ function NavBar() {
     }
   };
 
+  const isTransParent = pathname === "/";
+
   return (
-    <S.Container>
+    <S.Container isTransparent={isTransParent}>
       <S.Nav>
         {tabs.map((tab, idx) => (
           <li key={idx}>

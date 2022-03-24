@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { ReactComponent as Tmi } from "@/assets/tmi_logo_default.svg";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 function Search() {
+  const navigate = useNavigate();
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (inputRef.current) {
+      const input = inputRef.current.value;
+      navigate(`/user/${input}`);
+    }
+  };
+
   return (
     <S.Container>
       <S.Title>
@@ -35,9 +47,10 @@ function Search() {
             id="search"
             type="search"
             placeholder="카트라이더 닉네임을 입력"
+            ref={inputRef}
           />
         </label>
-        <button type="submit">
+        <button type="submit" onClick={handleClick}>
           <Tmi />
         </button>
       </S.Form>
