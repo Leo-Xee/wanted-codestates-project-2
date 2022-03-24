@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  background-color: transparent;
+  background-color: ${({ isTransparent }: { isTransparent: boolean }) =>
+    isTransparent ? "transparent" : "#005fcc"};
 `;
 
 export const Nav = styled.ul`
