@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
   button {cursor:pointer;background:none;border:0;}
   a {text-decoration:none}
   table {border-spacing:0;border-collapse:collapse}
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none; }
 
   * { font-family: 'Noto Sans KR', sans-serif; }
 
@@ -17,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
     --color-primary: #005fcc;
     --color-white: #ffffff;
     --color-gray: #6c7a89;
+
+    --animation-delay: 0.75s;
   }
 `;
 

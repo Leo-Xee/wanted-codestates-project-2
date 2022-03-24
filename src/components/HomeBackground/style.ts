@@ -5,10 +5,13 @@ import background from "@/assets/main_bg1.png";
 export const Container = styled.div`
   position: absolute;
   width: 100%;
+  min-width: 1000px;
   height: 655px;
   background: url(${background}) center;
   top: 48px;
   left: 0;
+  overflow: hidden;
+  z-index: -1;
 `;
 
 const movingBazzi = keyframes`
@@ -55,14 +58,14 @@ export const Bazzi = styled.img`
   top: 200px;
   left: 30px;
   width: 380px;
-  animation: ${movingBazzi} 0.5s;
+  animation: ${movingBazzi} var(--animation-delay);
 `;
 
 export const BazziBg = styled.img`
   position: absolute;
   top: 200px;
   left: -40px;
-  animation: ${movingBazziBg} 0.5s;
+  animation: ${movingBazziBg} var(--animation-delay);
 `;
 
 export const Dao = styled.img`
@@ -70,12 +73,12 @@ export const Dao = styled.img`
   top: 200px;
   right: 20px;
   width: 380px;
-  animation: ${movingDao} 0.5s;
+  animation: ${movingDao} var(--animation-delay);
 `;
 
 export const DaoBg = styled.img`
   position: absolute;
   top: 200px;
   right: -40px;
-  animation: ${movingDaoBg} 0.5s;
+  animation: ${movingDaoBg} var(--animation-delay);
 `;
