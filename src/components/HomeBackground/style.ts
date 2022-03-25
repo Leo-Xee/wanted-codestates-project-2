@@ -8,6 +8,7 @@ export const Container = styled.div`
   min-width: 1000px;
   height: 655px;
   background: url(${background}) center;
+  background-size: cover;
   top: 48px;
   left: 0;
   overflow: hidden;
