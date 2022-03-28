@@ -20,7 +20,7 @@
       "typescript": {}
     }
   },
-  "ignorePatterns": ["craco.config.ts"],
+  "ignorePatterns": ["craco.config.ts", "setupProxy.js"],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "no-restricted-exports": 0,
