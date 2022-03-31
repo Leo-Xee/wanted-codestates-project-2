@@ -24,6 +24,7 @@
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "no-restricted-exports": 0,
-    "react/no-array-index-key": 0
+    "react/no-array-index-key": 0,
+    "no-param-reassign": 0
   }
 }
