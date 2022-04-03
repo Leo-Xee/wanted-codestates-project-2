@@ -1,29 +1,70 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+
+import {
+  getUserIdByNickname,
+  getSoloMatchListByUserId,
+  getTeamMatchListByUserId,
+  Match,
+} from "@/api/UserAPI";
+import calcMatchList from "@/utils/calcMatchList";
 
 type User = {
   accessId: string;
   name: string;
   level: number;
-  // character: string;
-  // totalMatch: number;
-  // win: number;
-  // lose: number;
-  // retire: number;
-  // finish: number;
+  solo: {
+    total: number;
+    win: number;
+    lose: number;
+    retire: number;
+    finish: number;
+    character: string;
+    matchList: Match[];
+  };
+  team: {
+    total: number;
+    win: number;
+    lose: number;
+    retire: number;
+    finish: number;
+    character: string;
+    matchList: Match[];
+  };
 };
 
-// 캐릭터, 승, 패, 승률, 완주율, 리타이어율, 최근 50경기의 순위와 평균, 최근 200경기 순위의 평균
-
 export const getUserByNickname = createAsyncThunk<User, string>(
-  "GET_USER",
+  "users/fetchUserInfo",
   async (nickname) => {
-    const res = await axios.get(`/kart/v1.0/users/nickname/${nickname}`, {
-      headers: {
-        Authorization: String(process.env.REACT_APP_API_KEY),
+    const { accessId, name, level } = await getUserIdByNickname(nickname);
+    const soloMatchList = await getSoloMatchListByUserId(accessId);
+    const teamMatchList = await getTeamMatchListByUserId(accessId);
+
+    const soloMatchListInfo = calcMatchList(soloMatchList);
+    const teamMatchListInfo = calcMatchList(teamMatchList);
+
+    return {
+      accessId,
+      name,
+      level,
+      solo: {
+        total: soloMatchList.length,
+        win: soloMatchListInfo.win,
+        lose: soloMatchListInfo.lose,
+        retire: soloMatchListInfo.retire,
+        finish: soloMatchListInfo.finish,
+        character: soloMatchListInfo.character,
+        matchList: soloMatchList,
       },
-    });
-    return res.data;
+      team: {
+        total: teamMatchList.length,
+        win: teamMatchListInfo.win,
+        lose: teamMatchListInfo.lose,
+        retire: teamMatchListInfo.retire,
+        finish: teamMatchListInfo.finish,
+        character: teamMatchListInfo.character,
+        matchList: teamMatchList,
+      },
+    };
   },
 );
 
@@ -46,5 +87,5 @@ const usersSlice = createSlice({
       });
   },
 });
-// export const { addUser } = usersSlice.actions;
+
 export default usersSlice;
