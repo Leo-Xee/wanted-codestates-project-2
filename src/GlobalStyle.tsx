@@ -19,8 +19,11 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --color-primary: #005fcc;
+    --color-blue: #07f;
     --color-white: #ffffff;
     --color-gray: #6c7a89;
+    --color-gray-light: #fafafa;
+    --color-black: #1f334a;
 
     --animation-delay: 0.75s;
   }
