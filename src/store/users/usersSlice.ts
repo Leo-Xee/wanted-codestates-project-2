@@ -70,7 +70,7 @@ export const getUserByNickname = createAsyncThunk<User, string>(
 
 const usersSlice = createSlice({
   name: "users",
-  initialState: { users: [] as User[], loading: false, error: false },
+  initialState: { user: {} as User, loading: false, error: false },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -79,7 +79,7 @@ const usersSlice = createSlice({
       })
       .addCase(getUserByNickname.fulfilled, (state, action) => {
         state.loading = false;
-        state.users.push(action.payload);
+        state.user = action.payload;
       })
       .addCase(getUserByNickname.rejected, (state) => {
         state.loading = false;
