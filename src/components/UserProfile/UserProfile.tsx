@@ -4,20 +4,16 @@ import { FaUser, FaUsers, FaBell } from "react-icons/fa";
 import { IoReloadSharp, IoShareSocial } from "react-icons/io5";
 
 import { SOLO, TEAM } from "@/constant/matchType";
-import { useAppSelector } from "@/store";
+import { User } from "@/store/users/usersSlice";
 import * as S from "./style";
 
 type UserProfileProps = {
+  user: User;
   matchType: string;
   setMatchType: React.Dispatch<React.SetStateAction<string>>;
 };
 
-function UserProfile({ matchType, setMatchType }: UserProfileProps) {
-  const { user, loading, error } = useAppSelector((state) => state.users);
-
-  if (loading) return <div>로딩 중...</div>;
-  if (error) return <div>에러가 발생했습니다.</div>;
-
+function UserProfile({ user, matchType, setMatchType }: UserProfileProps) {
   console.log(user);
 
   const character = matchType === SOLO ? user.solo?.character : user.team?.character;

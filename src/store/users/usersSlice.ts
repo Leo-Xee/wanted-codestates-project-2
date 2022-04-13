@@ -8,7 +8,7 @@ import {
 } from "@/api/UserAPI";
 import calcMatchList from "@/utils/calcMatchList";
 
-type User = {
+export type User = {
   accessId: string;
   name: string;
   level: number;
