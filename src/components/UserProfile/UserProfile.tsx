@@ -4,11 +4,11 @@ import { FaUser, FaUsers, FaBell } from "react-icons/fa";
 import { IoReloadSharp, IoShareSocial } from "react-icons/io5";
 
 import { SOLO, TEAM } from "@/constant/matchType";
-import { User } from "@/store/users/usersSlice";
+import { UserInfo } from "api";
 import * as S from "./style";
 
 type UserProfileProps = {
-  user: User;
+  user: UserInfo;
   matchType: string;
   setMatchType: React.Dispatch<React.SetStateAction<string>>;
 };

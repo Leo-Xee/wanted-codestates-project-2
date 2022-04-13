@@ -1,38 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { UserInfo } from "api";
 
 import {
   getUserIdByNickname,
   getSoloMatchListByUserId,
   getTeamMatchListByUserId,
-  Match,
 } from "@/api/UserAPI";
 import calcMatchList from "@/utils/calcMatchList";
 
-export type User = {
-  accessId: string;
-  name: string;
-  level: number;
-  solo: {
-    total: number;
-    win: number;
-    lose: number;
-    retire: number;
-    finish: number;
-    character: string;
-    matchList: Match[];
-  };
-  team: {
-    total: number;
-    win: number;
-    lose: number;
-    retire: number;
-    finish: number;
-    character: string;
-    matchList: Match[];
-  };
-};
-
-export const getUserByNickname = createAsyncThunk<User, string>(
+export const getUserByNickname = createAsyncThunk<UserInfo, string>(
   "users/fetchUserInfo",
   async (nickname) => {
     const { accessId, name, level } = await getUserIdByNickname(nickname);
@@ -70,7 +46,7 @@ export const getUserByNickname = createAsyncThunk<User, string>(
 
 const usersSlice = createSlice({
   name: "users",
-  initialState: { user: {} as User, loading: false, error: false },
+  initialState: { user: {} as UserInfo, loading: false, error: false },
   reducers: {},
   extraReducers: (builder) => {
     builder

@@ -1,4 +1,4 @@
-import { Match } from "@/api/UserAPI";
+import { Match } from "api";
 
 // 리스트를 받아서 win, lose, retire, finish, character을 추출
 const calcMatchList = (matchList: Match[]) => {

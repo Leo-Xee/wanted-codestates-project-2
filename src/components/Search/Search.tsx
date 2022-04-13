@@ -43,12 +43,7 @@ function Search() {
           </select>
         </label>
         <label htmlFor="search">
-          <input
-            id="search"
-            type="search"
-            placeholder="카트라이더 닉네임을 입력"
-            ref={inputRef}
-          />
+          <input id="search" type="search" placeholder="카트라이더 닉네임을 입력" ref={inputRef} />
         </label>
         <button type="submit" onClick={handleClick}>
           <Tmi />
