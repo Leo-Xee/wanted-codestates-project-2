@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/store";
 import UserProfile from "@/components/UserProfile";
 import { SOLO } from "@/constant/matchType";
 import Spinner from "@/components/Spinner";
+import Simulator from "@/components/Simulator";
 import * as S from "./style";
 
 function UserDetail() {
@@ -25,6 +26,7 @@ function UserDetail() {
   return (
     <S.Container>
       <UserProfile user={user} matchType={matchType} setMatchType={setMatchType} />
+      <Simulator user={user} />
     </S.Container>
   );
 }
