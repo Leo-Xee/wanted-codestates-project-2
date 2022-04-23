@@ -1,6 +1,6 @@
-import { UserInfo } from "api";
 import React from "react";
 
+import { UserInfo } from "api";
 import * as S from "./style";
 
 type SimulatorProps = {
