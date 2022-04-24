@@ -25,7 +25,7 @@ export const Profile = styled.div`
   background-image: url(${background});
   border-width: 1px 1px 1px 4px;
   border-style: solid;
-  border-color: var(--color-gray-light) var(--color-gray-light) var(--color-gray-light)
+  border-color: var(--color-background) var(--color-background) var(--color-background)
     var(--color-blue);
 
   & img {

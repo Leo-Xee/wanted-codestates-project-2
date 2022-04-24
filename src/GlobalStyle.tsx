@@ -22,7 +22,8 @@ const GlobalStyle = createGlobalStyle`
     --color-blue: #07f;
     --color-white: #ffffff;
     --color-gray: #6c7a89;
-    --color-gray-light: #fafafa;
+    --color-gray-light: #ebebeb;
+    --color-background: #fafafa;
     --color-black: #1f334a;
 
     --animation-delay: 0.75s;

@@ -4,7 +4,6 @@ export const Container = styled.div`
   position: relative;
   width: 100px;
   height: 100px;
-  border: 1px solid red;
 `;
 
 export const InnerCircle = styled.div`
@@ -49,7 +48,6 @@ export const Circle = styled.div`
   height: 80px;
   margin: -40px 0 0 -40px;
   border-radius: 50%;
-  background-color: var(--color-white);
 `;
 
 export const Right = styled.div`
@@ -57,7 +55,7 @@ export const Right = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: var(--color-white);
+  background-color: var(--color-gray-light);
   clip: rect(0px, 80px, 80px, 40px);
 `;
 
@@ -77,7 +75,7 @@ export const Left = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: var(--color-white);
+  background-color: var(--color-gray-light);
   clip: rect(0px, 40px, 80px, 0px);
 `;
 

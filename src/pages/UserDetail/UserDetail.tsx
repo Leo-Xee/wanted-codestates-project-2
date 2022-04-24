@@ -7,6 +7,7 @@ import UserProfile from "@/components/UserProfile";
 import { SOLO } from "@/constant/matchType";
 import Spinner from "@/components/Spinner";
 import Simulator from "@/components/Simulator";
+import TotalRecord from "@/components/TotalRecord";
 import * as S from "./style";
 
 function UserDetail() {
@@ -23,10 +24,15 @@ function UserDetail() {
   if (loading) return <Spinner />;
   if (error) return <div>에러가 발생했습니다.</div>;
 
+  console.log(user);
+
   return (
     <S.Container>
       <UserProfile user={user} matchType={matchType} setMatchType={setMatchType} />
       <Simulator user={user} />
+      <div>
+        <TotalRecord user={user} matchType={matchType} />
+      </div>
     </S.Container>
   );
 }

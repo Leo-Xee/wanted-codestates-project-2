@@ -2,10 +2,12 @@ import React from "react";
 
 import * as S from "./style";
 
-function CircularProgressBar() {
-  const percent = 80;
-  const color = "red";
+type CircularProgressBarProps = {
+  percent: number;
+  color: string;
+};
 
+function CircularProgressBar({ percent, color }: CircularProgressBarProps) {
   return (
     <S.Container>
       <S.InnerCircle>
