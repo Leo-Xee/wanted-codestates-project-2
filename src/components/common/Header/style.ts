@@ -6,8 +6,8 @@ export const Container = styled.header`
 `;
 
 export const Head = styled.div`
-  max-width: 1300px;
-  min-width: 1000px;
+  max-width: 1100px;
+  min-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

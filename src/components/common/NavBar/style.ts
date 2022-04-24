@@ -7,8 +7,8 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.ul`
-  max-width: 1300px;
-  min-width: 1000px;
+  max-width: 1100px;
+  min-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: start;

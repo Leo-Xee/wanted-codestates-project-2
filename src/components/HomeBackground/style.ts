@@ -5,7 +5,7 @@ import background from "@/assets/main_bg1.png";
 export const Container = styled.div`
   position: absolute;
   width: 100%;
-  min-width: 1000px;
+  min-width: 1100px;
   height: 655px;
   background: url(${background}) center;
   background-size: cover;
