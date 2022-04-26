@@ -8,6 +8,7 @@ import { SOLO } from "@/constant/matchType";
 import Spinner from "@/components/Spinner";
 import Simulator from "@/components/Simulator";
 import TotalRecord from "@/components/TotalRecord";
+import MatchList from "@/components/MatchList";
 import * as S from "./style";
 
 function UserDetail() {
@@ -17,14 +18,13 @@ function UserDetail() {
 
   useEffect(() => {
     dispatch(getUserByNickname(String(id)));
-  }, []);
+    console.log("dispatch");
+  }, [id]);
 
   const { user, loading, error } = useAppSelector((state) => state.users);
 
   if (loading) return <Spinner />;
   if (error) return <div>에러가 발생했습니다.</div>;
-
-  console.log(user);
 
   return (
     <S.Container>
@@ -33,6 +33,7 @@ function UserDetail() {
       <div>
         <TotalRecord user={user} matchType={matchType} />
       </div>
+      <MatchList user={user} matchType={matchType} />
     </S.Container>
   );
 }

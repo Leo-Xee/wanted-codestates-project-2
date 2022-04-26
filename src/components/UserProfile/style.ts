@@ -72,8 +72,8 @@ export const MatchBtn = styled.button<{ isSelected: boolean }>`
   gap: 8px;
   padding: 4px;
   width: 100px;
-  color: ${(props) => (props.isSelected ? "white" : "#07f")};
-  background-color: ${(props) => (props.isSelected ? "#07f" : "white")};
+  color: ${(props) => (props.isSelected ? "var(--color-white)" : "var(--color-blue)")};
+  background-color: ${(props) => (props.isSelected ? "var(--color-blue)" : "var(--color-white)")};
 
   & span {
     font-size: 1.2rem;

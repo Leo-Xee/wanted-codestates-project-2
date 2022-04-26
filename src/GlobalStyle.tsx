@@ -25,6 +25,11 @@ const GlobalStyle = createGlobalStyle`
     --color-gray-light: #ebebeb;
     --color-background: #fafafa;
     --color-black: #1f334a;
+    --color-red: #f62459;
+    --color-blue-light: rgba(0, 119, 255, 0.1);
+    --color-red-light: rgba(246, 36, 89, 0.1);
+
+
 
     --animation-delay: 0.75s;
   }
