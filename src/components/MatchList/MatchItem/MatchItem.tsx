@@ -33,7 +33,8 @@ function MatchItem({ match }: MatchProps) {
 
   const track = trackData.find((v) => v.id === trackId)?.name;
   const kart = kartData.find((v) => v.id === kartId)?.name;
-  const ranking = matchRetired === "1" ? "리타이어" : `${matchRank}/${playerCount}`;
+  const rankingResult = matchRetired === "1" ? "#리타이어" : `#${matchRank}`;
+  const rankingEntire = matchRetired === "1" ? "" : `/${playerCount}`;
 
   const time = Number(matchTime);
   const msec = Math.floor((time % 1000) / 10);
@@ -41,19 +42,19 @@ function MatchItem({ match }: MatchProps) {
   const min = Math.floor(time / 1000 / 60);
 
   const fillNumber = (n: number): string | number => (n < 10 ? `0${n}` : n);
-
-  console.log(kartData);
+  const timeResult = status !== "retire" ? `${min}'${fillNumber(sec)}'${fillNumber(msec)}` : "-";
 
   return (
     <S.Wrapper status={status}>
       <S.Container status={status}>
         <S.Date>{dayjs(endTime).fromNow()}</S.Date>
-        <S.Ranking>#{ranking}</S.Ranking>
+        <S.Ranking status={status}>
+          <span className="result">{rankingResult}</span>
+          <span className="entire">{rankingEntire}</span>
+        </S.Ranking>
         <S.Track>{track}</S.Track>
         <S.Kart>{kart}</S.Kart>
-        <S.Time>
-          {status !== "retire" ? `${min}'${fillNumber(sec)}'${fillNumber(msec)}` : "-"}
-        </S.Time>
+        <S.Time>{timeResult}</S.Time>
       </S.Container>
     </S.Wrapper>
   );

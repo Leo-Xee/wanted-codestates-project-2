@@ -41,12 +41,25 @@ export const Date = styled.span`
   flex: 1;
 `;
 
-export const Ranking = styled.span`
+export const Ranking = styled.span<MatchResult>`
   // 글자색
-  font-size: 3rem;
   font-style: italic;
   text-align: center;
   flex: 1;
+  color: ${({ status }) =>
+    status === "win"
+      ? "var(--color-blue)"
+      : status === "default"
+      ? "var(--color-gray)"
+      : "var(--color-red)"};
+
+  & .result {
+    font-size: 3rem;
+  }
+
+  & .entire {
+    font-size: 2rem;
+  }
 `;
 
 export const Track = styled.span`
