@@ -25,6 +25,8 @@
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "no-restricted-exports": 0,
     "react/no-array-index-key": 0,
-    "no-param-reassign": 0
+    "no-param-reassign": 0,
+    "import/prefer-default-export": 0,
+    "no-nested-ternary": 0
   }
 }
