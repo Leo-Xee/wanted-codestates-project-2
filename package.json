@@ -2,46 +2,31 @@
   "name": "wanted-codestates-project-2",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@craco/craco": "^6.4.3",
-    "@reduxjs/toolkit": "^1.8.0",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@types/node": "^16.11.26",
-    "@types/react": "^17.0.41",
-    "@types/react-dom": "^17.0.14",
-    "@types/styled-components": "^5.1.24",
-    "axios": "^0.26.1",
-    "chart.js": "^3.7.1",
-    "craco-alias": "^3.0.1",
-    "dayjs": "^1.11.1",
-    "react": "^17.0.2",
-    "react-chartjs-2": "^4.1.0",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "5.0.0",
-    "styled-components": "^5.3.3",
-    "typescript": "^4.6.2"
-  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "eject": "react-scripts eject"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@craco/craco": "^6.4.3",
+    "axios": "^0.26.1",
+    "craco-alias": "^3.0.1",
+    "dayjs": "^1.11.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.6.2",
+    "http-proxy-middleware": "^2.0.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@types/node": "^16.11.26",
+    "@types/react": "^17.0.41",
+    "@types/react-dom": "^17.0.14",
+    "@types/styled-components": "^5.1.24",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "eslint": "^8.11.0",
@@ -54,7 +39,18 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "http-proxy-middleware": "^2.0.4",
     "prettier": "^2.6.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

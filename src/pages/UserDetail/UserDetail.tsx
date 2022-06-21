@@ -1,39 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { getUserByNickname } from "@/store/users/usersSlice";
-import { useParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "@/store";
-import UserProfile from "@/components/UserProfile";
-import { SOLO } from "@/constant/matchType";
-import Spinner from "@/components/Spinner";
-import Simulator from "@/components/Simulator";
-import TotalRecord from "@/components/TotalRecord";
-import MatchList from "@/components/MatchList";
+// import { useParams } from "react-router-dom";
+// import UserProfile from "@/components/UserProfile";
+// import { SOLO } from "@/constant/matchType";
+// import Spinner from "@/components/Spinner";
+// import Simulator from "@/components/Simulator";
+// import TotalRecord from "@/components/TotalRecord";
+// import MatchList from "@/components/MatchList";
 import * as S from "./style";
 
 function UserDetail() {
-  const { id } = useParams();
-  const dispatch = useAppDispatch();
-  const [matchType, setMatchType] = useState(SOLO);
+  // const { id } = useParams();
+  // const [matchType, setMatchType] = useState(SOLO);
 
-  useEffect(() => {
-    dispatch(getUserByNickname(String(id)));
-    console.log("dispatch");
-  }, [id]);
-
-  const { user, loading, error } = useAppSelector((state) => state.users);
-
-  if (loading) return <Spinner />;
-  if (error) return <div>에러가 발생했습니다.</div>;
+  // if (loading) return <Spinner />;
+  // if (error) return <div>에러가 발생했습니다.</div>;
 
   return (
     <S.Container>
-      <UserProfile user={user} matchType={matchType} setMatchType={setMatchType} />
+      Hello
+      {/* <UserProfile user={user} matchType={matchType} setMatchType={setMatchType} />
       <Simulator user={user} />
       <div>
         <TotalRecord user={user} matchType={matchType} />
       </div>
-      <MatchList user={user} matchType={matchType} />
+      <MatchList user={user} matchType={matchType} /> */}
     </S.Container>
   );
 }
