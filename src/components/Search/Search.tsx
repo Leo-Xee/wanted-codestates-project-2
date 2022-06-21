@@ -12,7 +12,7 @@ function Search() {
     e.preventDefault();
     if (inputRef.current) {
       const input = inputRef.current.value;
-      navigate(`/user/${input}`);
+      navigate(`/users/${input}`);
     }
   };
 
