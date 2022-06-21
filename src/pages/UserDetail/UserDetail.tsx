@@ -1,6 +1,6 @@
 import React from "react";
 
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import UserProfile from "@/components/UserProfile";
 // import { SOLO } from "@/constant/matchType";
 // import Spinner from "@/components/Spinner";
@@ -10,7 +10,10 @@ import React from "react";
 import * as S from "./style";
 
 function UserDetail() {
-  // const { id } = useParams();
+  const { id } = useParams();
+
+  console.log(id);
+
   // const [matchType, setMatchType] = useState(SOLO);
 
   // if (loading) return <Spinner />;
