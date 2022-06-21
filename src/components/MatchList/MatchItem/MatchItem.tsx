@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Match } from "api";
-import trackData from "@/data/track.json";
-import kartData from "@/data/kart.json";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import trackData from "@/shared/data/track.json";
+import kartData from "@/shared/data/kart.json";
 import "dayjs/locale/ko";
 import * as S from "./style";
 
