@@ -1,7 +1,7 @@
 import React from "react";
 
 import { UserInfo } from "api";
-import { SOLO } from "@/constant/matchType";
+import { SOLO } from "@/shared/constant/matchType";
 import * as S from "./style";
 import CircularProgressBar from "../CircularProgressBar";
 

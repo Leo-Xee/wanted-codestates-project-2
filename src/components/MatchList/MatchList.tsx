@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SOLO } from "@/constant/matchType";
+import { SOLO } from "@/shared/constant/matchType";
 import { UserInfo } from "api";
 import Match from "./MatchItem";
 import * as S from "./style";

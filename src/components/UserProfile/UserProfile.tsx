@@ -3,7 +3,7 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaUser, FaUsers, FaBell } from "react-icons/fa";
 import { IoReloadSharp, IoShareSocial } from "react-icons/io5";
 
-import { SOLO, TEAM } from "@/constant/matchType";
+import { SOLO, TEAM } from "@/shared/constant/matchType";
 import { UserInfo } from "api";
 import * as S from "./style";
 
