@@ -3,20 +3,19 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaUser, FaUsers, FaBell } from "react-icons/fa";
 import { IoReloadSharp, IoShareSocial } from "react-icons/io5";
 
-import { SOLO, TEAM } from "@/shared/constant/matchType";
-import { UserInfo } from "api";
+import { MatchListType, UserInfo } from "api";
 import * as S from "./style";
 
 type UserProfileProps = {
   user: UserInfo;
-  matchType: string;
+  matchType: MatchListType;
   setMatchType: React.Dispatch<React.SetStateAction<string>>;
 };
 
 function UserProfile({ user, matchType, setMatchType }: UserProfileProps) {
   console.log(user);
 
-  const character = matchType === SOLO ? user.solo?.character : user.team?.character;
+  const character = matchType === "solo" ? user.solo?.character : user.team?.character;
 
   return (
     <S.Container>
@@ -35,16 +34,16 @@ function UserProfile({ user, matchType, setMatchType }: UserProfileProps) {
             <S.MatchBtnContainer>
               <S.MatchBtn
                 type="button"
-                isSelected={matchType === SOLO}
-                onClick={() => setMatchType(SOLO)}
+                isSelected={matchType === "solo"}
+                onClick={() => setMatchType("solo")}
               >
                 <FaUser size={14} />
                 <span>개인전</span>
               </S.MatchBtn>
               <S.MatchBtn
                 type="button"
-                isSelected={matchType === TEAM}
-                onClick={() => setMatchType(TEAM)}
+                isSelected={matchType === "team"}
+                onClick={() => setMatchType("team")}
               >
                 <FaUsers size={18} />
                 <span>팀전</span>

@@ -1,4 +1,6 @@
 declare module "api" {
+  export type MatchListType = "solo" | "team";
+
   export type User = {
     accessId: string;
     name: string;

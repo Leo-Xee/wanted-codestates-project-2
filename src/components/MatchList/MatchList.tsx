@@ -1,17 +1,16 @@
 import React from "react";
 
-import { SOLO } from "@/shared/constant/matchType";
-import { UserInfo } from "api";
+import { MatchListType, UserInfo } from "api";
 import Match from "./MatchItem";
 import * as S from "./style";
 
 type MatchListProps = {
   user: UserInfo;
-  matchType: string;
+  matchType: MatchListType;
 };
 
 function MatchList({ user, matchType }: MatchListProps) {
-  const { matchList } = matchType === SOLO ? user.solo : user.team;
+  const { matchList } = matchType === "solo" ? user.solo : user.team;
 
   return (
     <S.Container>

@@ -1,7 +1,6 @@
 import React from "react";
 
 import { UserInfo } from "api";
-import { SOLO } from "@/shared/constant/matchType";
 import * as S from "./style";
 import CircularProgressBar from "../CircularProgressBar";
 
@@ -13,7 +12,7 @@ type TotalRecordProps = {
 function TotalRecord({ user, matchType }: TotalRecordProps) {
   console.log(user.solo.total);
 
-  const { total, win, lose, retire, finish } = matchType === SOLO ? user.solo : user.team;
+  const { total, win, lose, retire, finish } = matchType === "solo" ? user.solo : user.team;
 
   const calcRate = (target: number) => Math.ceil((target / total) * 100);
 
