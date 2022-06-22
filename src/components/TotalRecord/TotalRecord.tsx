@@ -1,20 +1,18 @@
 import React from "react";
 
-import { UserInfo } from "api";
+import { Match } from "api";
+import useCalcMatchList from "@/hooks/useCalcMatchList";
 import * as S from "./style";
 import CircularProgressBar from "../CircularProgressBar";
 
 type TotalRecordProps = {
-  user: UserInfo;
-  matchType: string;
+  matchList: Match[];
 };
 
-function TotalRecord({ user, matchType }: TotalRecordProps) {
-  console.log(user.solo.total);
+function TotalRecord({ matchList }: TotalRecordProps) {
+  const { total, win, lose, finish, retire } = useCalcMatchList(matchList);
 
-  const { total, win, lose, retire, finish } = matchType === "solo" ? user.solo : user.team;
-
-  const calcRate = (target: number) => Math.ceil((target / total) * 100);
+  const removeDecimal = (target: number) => Math.ceil((target / total) * 100);
 
   return (
     <S.Wrapper>
@@ -30,15 +28,15 @@ function TotalRecord({ user, matchType }: TotalRecordProps) {
         <S.RateList>
           <S.RateContainer>
             <span>승률</span>
-            <CircularProgressBar percent={calcRate(win)} color="#07f" />
+            <CircularProgressBar percent={removeDecimal(win)} color="#07f" />
           </S.RateContainer>
           <S.RateContainer>
             <span>완주율</span>
-            <CircularProgressBar percent={calcRate(finish)} color="#69db7c" />
+            <CircularProgressBar percent={removeDecimal(finish)} color="#69db7c" />
           </S.RateContainer>
           <S.RateContainer>
             <span>리타이어율</span>
-            <CircularProgressBar percent={calcRate(retire)} color="#e03131" />
+            <CircularProgressBar percent={removeDecimal(retire)} color="#e03131" />
           </S.RateContainer>
         </S.RateList>
         <S.Mode>

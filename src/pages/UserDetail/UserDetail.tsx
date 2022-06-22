@@ -7,14 +7,14 @@ import { MatchListType } from "api";
 import UserProfile from "@/components/UserProfile";
 import Simulator from "@/components/Simulator";
 import MatchList from "@/components/MatchList";
+import TotalRecord from "@/components/TotalRecord";
 import * as S from "./style";
 
 function UserDetail() {
   const { nickname } = useParams();
-  const [matchType, setMatchType] = useState<MatchListType>("team");
+  const [matchType, setMatchType] = useState<MatchListType>("solo");
 
   const { user, data: matchList, error, isValidating } = useGetMatchList(nickname || "", matchType);
-  console.log(matchList);
 
   if (isValidating) return <Spinner />;
   if (error) return <div>에러가 발생했습니다.</div>;
@@ -30,6 +30,9 @@ function UserDetail() {
         setMatchType={setMatchType}
       />
       <Simulator userName={user.name} />
+      <div>
+        <TotalRecord matchList={matchList} />
+      </div>
       <MatchList matchList={matchList} />
     </S.Container>
   );
