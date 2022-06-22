@@ -19,8 +19,8 @@ function useGetMatchList(nickname: string, matchType: MatchListType) {
 
   if (matchType === "team") {
     matchList = useSWR(
-      () => ["/soloMatchList", user?.accessId],
-      () => userService.getSoloMatchListByUserId(user?.accessId || ""),
+      () => ["/teamMatchList", user?.accessId],
+      () => userService.getTeamMatchListByUserId(user?.accessId || ""),
     );
   }
 
