@@ -17,7 +17,7 @@ const userService = {
   getTeamMatchListByUserId: async (accessId: string) => {
     const data = await fetcher<MatchList>(
       "get",
-      `/kart/v1.0/users/${accessId}/matches?start_date=&end_date=&offset=0&limit=200&match_types=${SPEED_TEAM}`,
+      `/kart/v1.0/users/${accessId}/matches?start_date=&end_date=&offset=0&limit=75&match_types=${SPEED_TEAM}`,
     );
     return data.matches[0].matches;
   },
