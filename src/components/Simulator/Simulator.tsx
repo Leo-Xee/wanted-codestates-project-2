@@ -1,17 +1,16 @@
 import React from "react";
 
-import { UserInfo } from "api";
 import * as S from "./style";
 
 type SimulatorProps = {
-  user: UserInfo;
+  userName: string;
 };
 
-function Simulator({ user }: SimulatorProps) {
+function Simulator({ userName }: SimulatorProps) {
   return (
     <S.Wrapper>
       <S.Container>
-        <S.Title>1대1 매칭 시뮬레이터 - &apos;{user.name}&apos;와 가상 대결을 펼쳐보세요.</S.Title>
+        <S.Title>1대1 매칭 시뮬레이터 - &apos;{userName}&apos;와 가상 대결을 펼쳐보세요.</S.Title>
       </S.Container>
     </S.Wrapper>
   );

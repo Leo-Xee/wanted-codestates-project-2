@@ -1,21 +1,20 @@
+import { Match, MatchListType } from "api";
 import React from "react";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaUser, FaUsers, FaBell } from "react-icons/fa";
 import { IoReloadSharp, IoShareSocial } from "react-icons/io5";
 
-import { MatchListType, UserInfo } from "api";
 import * as S from "./style";
 
 type UserProfileProps = {
-  user: UserInfo;
+  userName: string;
+  lastestMatch: Match;
   matchType: MatchListType;
-  setMatchType: React.Dispatch<React.SetStateAction<string>>;
+  setMatchType: React.Dispatch<React.SetStateAction<MatchListType>>;
 };
 
-function UserProfile({ user, matchType, setMatchType }: UserProfileProps) {
-  console.log(user);
-
-  const character = matchType === "solo" ? user.solo?.character : user.team?.character;
+function UserProfile({ userName, lastestMatch, matchType, setMatchType }: UserProfileProps) {
+  const { character } = lastestMatch;
 
   return (
     <S.Container>
@@ -29,7 +28,7 @@ function UserProfile({ user, matchType, setMatchType }: UserProfileProps) {
           alt="캐릭터"
         />
         <S.ProfileContent>
-          <h1>{user.name}</h1>
+          <h1>{userName}</h1>
           <S.BtnContainer>
             <S.MatchBtnContainer>
               <S.MatchBtn

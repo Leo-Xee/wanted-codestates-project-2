@@ -1,21 +1,18 @@
 import React from "react";
 
-import { MatchListType, UserInfo } from "api";
-import Match from "./MatchItem";
+import { Match } from "api";
+import MatchItem from "./MatchItem";
 import * as S from "./style";
 
 type MatchListProps = {
-  user: UserInfo;
-  matchType: MatchListType;
+  matchList: Match[];
 };
 
-function MatchList({ user, matchType }: MatchListProps) {
-  const { matchList } = matchType === "solo" ? user.solo : user.team;
-
+function MatchList({ matchList }: MatchListProps) {
   return (
     <S.Container>
       {matchList.map((match, idx) => (
-        <Match key={idx} match={match} />
+        <MatchItem key={idx} match={match} />
       ))}
     </S.Container>
   );
