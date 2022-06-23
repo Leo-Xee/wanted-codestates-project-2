@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@/pages/Home";
 import UserDetail from "@/pages/UserDetail";
-import Ranking from "@/pages/Ranking";
 import Header from "./components/common/Header";
 import NavBar from "./components/common/NavBar";
 
@@ -15,7 +14,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users/:nickname" element={<UserDetail />} />
-        <Route path="/ranking" element={<Ranking />} />
       </Routes>
     </BrowserRouter>
   );
