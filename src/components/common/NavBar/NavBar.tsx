@@ -7,10 +7,7 @@ function NavBar() {
   const [currentTab, setCurrentTab] = useState("홈");
   const { pathname } = useLocation();
 
-  const tabs = [
-    { title: "홈", path: "/" },
-    { title: "랭킹", path: "/ranking" },
-  ];
+  const tabs = [{ title: "홈", path: "/" }];
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const target = e.target as HTMLElement;
@@ -19,11 +16,9 @@ function NavBar() {
     }
   };
 
-  const isTransParent = pathname === "/";
-
   return (
-    <S.Container isTransparent={isTransParent}>
-      <S.Nav>
+    <S.Container isTransparent={pathname === "/"}>
+      <S.Nav isCurrentTab={pathname !== "/"}>
         {tabs.map((tab, idx) => (
           <li key={idx}>
             <div>

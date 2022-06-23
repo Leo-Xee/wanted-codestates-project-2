@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{ isTransparent: boolean }>`
   position: relative;
   width: 100%;
-  background-color: ${({ isTransparent }: { isTransparent: boolean }) =>
-    isTransparent ? "transparent" : "#005fcc"};
+  background-color: ${({ isTransparent }) => (isTransparent ? "transparent" : "#005fcc")};
   z-index: 100;
 `;
 
-export const Nav = styled.ul`
+export const Nav = styled.ul<{ isCurrentTab: boolean }>`
   max-width: 1100px;
   min-width: 1100px;
   margin: 0 auto;
@@ -32,7 +31,7 @@ export const Nav = styled.ul`
 
     &::after {
       content: "";
-      display: block;
+      display: ${({ isCurrentTab }) => (isCurrentTab ? "none" : "block")};
       position: absolute;
       bottom: 0;
       width: 0%;
