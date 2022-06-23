@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
   input[type="search"]::-webkit-search-results-decoration { display: none; }
+  li {list-style: none}
 
   * { font-family: 'Noto Sans KR', sans-serif; }
 
