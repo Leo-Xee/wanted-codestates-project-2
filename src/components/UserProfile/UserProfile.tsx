@@ -1,9 +1,10 @@
-import { Match, MatchListType } from "api";
 import React from "react";
+import { Match, MatchListType } from "api";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaUser, FaUsers, FaBell } from "react-icons/fa";
 import { IoReloadSharp, IoShareSocial } from "react-icons/io5";
 
+import { useSWRConfig } from "swr";
 import * as S from "./style";
 
 type UserProfileProps = {
@@ -14,7 +15,15 @@ type UserProfileProps = {
 };
 
 function UserProfile({ userName, lastestMatch, matchType, setMatchType }: UserProfileProps) {
-  const { character } = lastestMatch;
+  const { character, accountNo: accessId } = lastestMatch;
+
+  const { mutate } = useSWRConfig();
+
+  const reload = () => {
+    mutate(["/users", userName]);
+    mutate(["/soloMatchList", accessId]);
+    mutate(["/teamMatchList", accessId]);
+  };
 
   return (
     <S.Container>
@@ -49,7 +58,7 @@ function UserProfile({ userName, lastestMatch, matchType, setMatchType }: UserPr
               </S.MatchBtn>
             </S.MatchBtnContainer>
             <S.UtilBtnContainer>
-              <S.UtilBtn type="button">
+              <S.UtilBtn type="button" onClick={() => reload()}>
                 <IoReloadSharp size={14} />
                 <span>전적갱신</span>
               </S.UtilBtn>
