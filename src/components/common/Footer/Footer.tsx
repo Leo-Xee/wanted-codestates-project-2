@@ -5,10 +5,9 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   width: 100%;
-  background-color: #fafafa;
 
   & span {
-    border-left: 1px solid #aaa;
+    border-left: 1px solid var(--color-gray);
     padding-left: 10px;
   }
 `;
@@ -21,14 +20,14 @@ const Container = styled.div`
   align-items: center;
   gap: 10px;
   font-size: 1.3rem;
-  color: #aaa;
+  color: var(--color-gray);
 `;
 
 function Footer() {
   return (
     <StyledFooter>
       <Container>
-        <Lab width={140} fill="#aaa" />
+        <Lab width={140} fill="#6c7a89" />
         <span>Data based on NEXON DEVELOPERS</span>
       </Container>
     </StyledFooter>

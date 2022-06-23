@@ -34,5 +34,5 @@ export const VideoTitle = styled.div`
   line-height: 1.4rem;
 `;
 export const VideoOwner = styled.div`
-  color: #aaa;
+  color: var(--color-gray);
 `;

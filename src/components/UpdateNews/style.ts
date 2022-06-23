@@ -34,7 +34,7 @@ export const Table = styled.div`
 
 export const Header = styled.div`
   display: flex;
-  background-color: #efefef;
+  background-color: var(--color-background);
   text-align: center;
   padding: 5px 0;
 `;
