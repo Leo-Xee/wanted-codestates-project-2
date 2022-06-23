@@ -26,7 +26,7 @@ export const Nav = styled.ul`
     margin-right: 40px;
     width: 80px;
     height: 55px;
-    opacity: 0.3;
+    opacity: 0.4;
 
     &::after {
       content: "";

@@ -15,6 +15,7 @@ export const Container = styled.div`
   top: 48px;
   left: 0;
   overflow: hidden;
+  z-index: -1;
 `;
 
 const movingTitle = keyframes`
