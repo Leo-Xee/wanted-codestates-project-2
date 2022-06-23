@@ -5,6 +5,7 @@ import Home from "@/pages/Home";
 import UserDetail from "@/pages/UserDetail";
 import Header from "./components/common/Header";
 import NavBar from "./components/common/NavBar";
+import Footer from "./components/common/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/users/:nickname" element={<UserDetail />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

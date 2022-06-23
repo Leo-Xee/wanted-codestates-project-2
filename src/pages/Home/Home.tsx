@@ -11,17 +11,22 @@ const NewsContainer = styled.div`
   justify-content: center;
   gap: 30px;
   animation: ${movingUp} var(--animation-delay);
+  padding-bottom: 30px;
+`;
+
+const Section = styled.section`
+  background-color: #fafafa;
 `;
 
 function Home() {
   return (
-    <section>
+    <Section>
       <HomeBackground />
       <NewsContainer>
         <UpdateNews />
         <VideoNews />
       </NewsContainer>
-    </section>
+    </Section>
   );
 }
 
