@@ -86,10 +86,10 @@ function RankChart({ matchList }: RankChartProps) {
         </span>
         <S.Detail>
           <span>
-            지난 {rankListAll.length}경기 <S.Highlight>{rankAverageAll}위</S.Highlight>
+            지난 {rankListAll.length}경기 <S.Highlight>{rankAverageAll.toFixed(2)}위</S.Highlight>
           </span>
           <span>
-            최근 {rankListLast.length}경기 <S.Highlight>{rankAverageLast}위</S.Highlight>
+            최근 {rankListLast.length}경기 <S.Highlight>{rankAverageLast.toFixed(2)}위</S.Highlight>
           </span>
         </S.Detail>
       </S.Title>
