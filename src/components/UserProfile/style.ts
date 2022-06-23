@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "@/assets/background_flag.png";
+import background from "@/assets/background_flag_profile.png";
 
 export const Container = styled.div`
   max-width: 1100px;
@@ -25,7 +25,7 @@ export const Profile = styled.div`
   background-image: url(${background});
   border-width: 1px 1px 1px 4px;
   border-style: solid;
-  border-color: var(--color-background) var(--color-background) var(--color-background)
+  border-color: var(--color-gray-light) var(--color-gray-light) var(--color-gray-light)
     var(--color-blue);
 
   & img {
