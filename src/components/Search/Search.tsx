@@ -11,7 +11,7 @@ function Search() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (inputRef.current) {
-      const input = inputRef.current.value;
+      const input = inputRef.current.value.replace(/ /g, "");
       navigate(`/users/${input}`);
     }
   };
@@ -38,8 +38,6 @@ function Search() {
         <label htmlFor="searchType">
           <select id="searchType">
             <option value="유저">유저</option>
-            <option value="카트">카트</option>
-            <option value="트랙">트랙</option>
           </select>
         </label>
         <label htmlFor="search">
