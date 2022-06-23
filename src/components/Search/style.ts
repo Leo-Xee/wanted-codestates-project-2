@@ -1,11 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-// export const Container = styled.div`
-//   position: relative;
-//   margin: 0 auto;
-//   width: 670px;
-// `;
-
 const extendingForm = keyframes`
 0% {
   width: 200px;

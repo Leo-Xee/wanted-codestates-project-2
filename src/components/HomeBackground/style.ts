@@ -15,7 +15,6 @@ export const Container = styled.div`
   top: 48px;
   left: 0;
   overflow: hidden;
-  z-index: -1;
 `;
 
 const movingTitle = keyframes`
@@ -66,7 +65,6 @@ export const Animate = styled.div`
   top: 230px;
   display: flex;
   align-items: center;
-  z-index: 1000;
 `;
 
 const movingToRight = keyframes`

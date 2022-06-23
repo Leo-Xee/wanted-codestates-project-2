@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: relative;
   width: 100%;
   background-color: ${({ isTransparent }: { isTransparent: boolean }) =>
     isTransparent ? "transparent" : "#005fcc"};
+  z-index: 100;
 `;
 
 export const Nav = styled.ul`

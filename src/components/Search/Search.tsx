@@ -17,7 +17,6 @@ function Search() {
   };
 
   return (
-    // <S.Container>
     <S.Form>
       <label htmlFor="searchType">
         <select id="searchType">
@@ -31,7 +30,6 @@ function Search() {
         <Tmi />
       </button>
     </S.Form>
-    // </S.Container>
   );
 }
 
