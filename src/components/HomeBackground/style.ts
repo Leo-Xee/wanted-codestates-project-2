@@ -17,7 +17,7 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
-const movingTitle = keyframes`
+export const movingUp = keyframes`
   0% {
     transform: translateY(50px);
     opacity: 0;
@@ -34,7 +34,7 @@ export const Title = styled.div`
   flex-direction: column;
   align-items: center;
   color: var(--color-white);
-  animation: ${movingTitle} var(--animation-delay);
+  animation: ${movingUp} var(--animation-delay);
 
   & .api {
     font-size: 2.8rem;
