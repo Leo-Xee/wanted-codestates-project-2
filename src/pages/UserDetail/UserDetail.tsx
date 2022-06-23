@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Spinner from "@/components/Spinner";
+import Spinner from "@/components/common/Spinner";
 import useGetMatchList from "@/hooks/apis/useGetMatchList";
 import { MatchListType } from "api";
 import UserProfile from "@/components/UserProfile";
