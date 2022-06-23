@@ -10,7 +10,8 @@ type TotalRecordProps = {
 };
 
 function TotalRecord({ matchList }: TotalRecordProps) {
-  const { total, win, lose, finish, retire } = useCalcMatchList(matchList);
+  const { record } = useCalcMatchList(matchList);
+  const { total, win, lose, finish, retire } = record;
 
   const removeDecimal = (target: number) => Math.ceil((target / total) * 100);
 
@@ -19,7 +20,7 @@ function TotalRecord({ matchList }: TotalRecordProps) {
       <S.Container>
         <S.Title>
           <span>
-            <span className="highlight">종합</span> 전적
+            <S.Highlight>종합</S.Highlight> 전적
           </span>
           <span>
             {total}전 {win}승 {lose}패
@@ -41,7 +42,7 @@ function TotalRecord({ matchList }: TotalRecordProps) {
         </S.RateList>
         <S.Mode>
           <span>
-            <span className="highlight">최다주행</span> 모드
+            <S.Highlight>최다주행</S.Highlight> 모드
           </span>
           <span className="mode">매우빠름</span>
         </S.Mode>

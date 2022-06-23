@@ -8,6 +8,7 @@ import UserProfile from "@/components/UserProfile";
 import Simulator from "@/components/Simulator";
 import MatchList from "@/components/MatchList";
 import TotalRecord from "@/components/TotalRecord";
+import RankChart from "@/components/RankChart";
 import * as S from "./style";
 
 function UserDetail() {
@@ -30,9 +31,10 @@ function UserDetail() {
         setMatchType={setMatchType}
       />
       <Simulator userName={user.name} />
-      <div>
+      <S.DashBoard>
         <TotalRecord matchList={matchList} />
-      </div>
+        <RankChart matchList={matchList} />
+      </S.DashBoard>
       <MatchList matchList={matchList} />
     </S.Container>
   );
