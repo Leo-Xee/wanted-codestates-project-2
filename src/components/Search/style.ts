@@ -1,52 +1,10 @@
 import styled, { keyframes } from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 150px auto;
-`;
-
-const movingTitle = keyframes`
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-export const Title = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--color-white);
-  animation: ${movingTitle} var(--animation-delay);
-  & .api {
-    font-size: 2.8rem;
-  }
-
-  & .main {
-    margin-top: -12px;
-    font-size: 4rem;
-    & span {
-      font-weight: bold;
-    }
-  }
-
-  & .message {
-    width: 280px;
-    height: 28px;
-    font-size: 1.8rem;
-    text-align: center;
-    vertical-align: middle;
-    letter-spacing: 2px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 35px;
-  }
-`;
+// export const Container = styled.div`
+//   position: relative;
+//   margin: 0 auto;
+//   width: 670px;
+// `;
 
 const extendingForm = keyframes`
 0% {

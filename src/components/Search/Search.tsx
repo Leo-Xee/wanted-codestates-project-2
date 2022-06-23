@@ -17,37 +17,21 @@ function Search() {
   };
 
   return (
-    <S.Container>
-      <S.Title>
-        <p>
-          <a
-            href="https://developers.nexon.com/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="api"
-          >
-            넥슨 오픈API 기반
-          </a>
-        </p>
-        <p className="main">
-          카트라이더 <span>전적</span> 검색
-        </p>
-        <p className="message">사회적거리두기</p>
-      </S.Title>
-      <S.Form>
-        <label htmlFor="searchType">
-          <select id="searchType">
-            <option value="유저">유저</option>
-          </select>
-        </label>
-        <label htmlFor="search">
-          <input id="search" type="search" placeholder="카트라이더 닉네임을 입력" ref={inputRef} />
-        </label>
-        <button type="submit" onClick={handleClick}>
-          <Tmi />
-        </button>
-      </S.Form>
-    </S.Container>
+    // <S.Container>
+    <S.Form>
+      <label htmlFor="searchType">
+        <select id="searchType">
+          <option value="유저">유저</option>
+        </select>
+      </label>
+      <label htmlFor="search">
+        <input id="search" type="search" placeholder="카트라이더 닉네임을 입력" ref={inputRef} />
+      </label>
+      <button type="submit" onClick={handleClick}>
+        <Tmi />
+      </button>
+    </S.Form>
+    // </S.Container>
   );
 }
 
