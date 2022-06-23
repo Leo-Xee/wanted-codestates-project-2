@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+export const DefaultHighlight = styled.span`
+  color: var(--color-blue);
+  font-weight: 600;
+`;
+
 export const Wrapper = styled.div`
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 20px;
 `;
 
 export const Container = styled.div`
@@ -20,12 +24,9 @@ export const Title = styled.div`
   justify-content: space-between;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--color-gray-light);
-
-  & .highlight {
-    color: var(--color-blue);
-    font-weight: 600;
-  }
 `;
+
+export const Highlight = styled(DefaultHighlight)``;
 
 export const RateList = styled.div`
   display: flex;
