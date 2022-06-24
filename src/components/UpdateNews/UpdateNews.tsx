@@ -5,7 +5,7 @@ import * as S from "./style";
 function UpdateNews() {
   const updateLogData = [
     {
-      content: "내용	날짜 [안내] TMI 1대1 매칭 시뮬레이터, 기록 상위분포 오류 관련",
+      content: "[안내] TMI 1대1 매칭 시뮬레이터, 기록 상위분포 오류 관련",
       date: "2020.02.24",
     },
     {
