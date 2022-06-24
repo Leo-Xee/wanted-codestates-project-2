@@ -12,7 +12,11 @@ function useGetMatchList(nickname: string, matchType: MatchListType) {
     },
   };
 
-  const { data: user } = useSWR(
+  const {
+    data: user,
+    error,
+    isValidating: isUserValidating,
+  } = useSWR(
     nickname ? ["/users", nickname] : null,
     () => userService.getUserIdByNickname(nickname || ""),
     option,
@@ -36,8 +40,8 @@ function useGetMatchList(nickname: string, matchType: MatchListType) {
 
   return {
     data: matchList?.data,
-    error: matchList?.error,
-    isValidating: matchList?.isValidating,
+    error,
+    isValidating: isUserValidating || matchList?.isValidating,
     user,
   };
 }
