@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
