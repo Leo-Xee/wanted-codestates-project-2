@@ -6,6 +6,7 @@ import UserDetail from "@/pages/UserDetail";
 import Header from "./components/common/Header";
 import NavBar from "./components/common/NavBar";
 import Footer from "./components/common/Footer";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users/:nickname" element={<UserDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
