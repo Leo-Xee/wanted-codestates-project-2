@@ -1,6 +1,7 @@
 import axios from "axios";
 
 axios.defaults.headers.common.Authorization = String(process.env.REACT_APP_API_KEY);
+axios.defaults.baseURL = "https://leo-proxy-app.herokuapp.com/https://api.nexon.co.kr/";
 
 const fetcher = async <T>(
   method: "get" | "post" | "put" | "patch" | "delete",
