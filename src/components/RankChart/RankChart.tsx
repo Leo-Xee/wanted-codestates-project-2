@@ -6,6 +6,7 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  LineController,
   Title,
   Tooltip,
   Legend,
@@ -17,7 +18,16 @@ import { Match } from "api";
 import useCalcMatchList from "@/hooks/useCalcMatchList";
 import * as S from "./style";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LineController,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 type RankChartProps = {
   matchList: Match[];
