@@ -1,4 +1,4 @@
-import useSWR from "swr";
+import useSWR, { SWRConfiguration } from "swr";
 
 import userService from "@/services/userService";
 import { MatchListType } from "api";
@@ -6,7 +6,11 @@ import { MatchListType } from "api";
 function useGetMatchList(nickname: string, matchType: MatchListType) {
   let matchList;
 
-  const option = { errorRetryCount: 1 };
+  const option: SWRConfiguration = {
+    onErrorRetry: (error) => {
+      if (error.status === 404) return;
+    },
+  };
 
   const { data: user } = useSWR(
     nickname ? ["/users", nickname] : null,
