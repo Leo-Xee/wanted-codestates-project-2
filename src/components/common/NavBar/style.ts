@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ isTransparent: boolean }>`
+export const Container = styled.nav<{ isTransparent: boolean }>`
   position: relative;
   width: 100%;
   background-color: ${({ isTransparent }) => (isTransparent ? "transparent" : "#005fcc")};
