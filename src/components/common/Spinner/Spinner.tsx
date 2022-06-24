@@ -1,9 +1,10 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import * as S from "./style";
 
 function Spinner() {
-  return (
+  const element = (
     <S.Wrapper>
       <S.Container>
         <S.Spin>
@@ -15,6 +16,9 @@ function Spinner() {
       </S.Container>
     </S.Wrapper>
   );
+  const target = document.querySelector("#modal") as Element;
+
+  return ReactDOM.createPortal(element, target);
 }
 
 export default Spinner;
