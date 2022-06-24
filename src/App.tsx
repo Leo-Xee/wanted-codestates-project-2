@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@/pages/Home";
 import UserDetail from "@/pages/UserDetail";
-import NotFound from "./pages/NotFound";
+import ErrorBanner from "./components/common/ErrorBanner/ErrorBanner";
 import Layout from "./components/common/Layout/Layout";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users/:nickname" element={<UserDetail />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<ErrorBanner message="잘못된 경로로 접근한 것 같아요!!" />} />
         </Routes>
       </Layout>
     </BrowserRouter>

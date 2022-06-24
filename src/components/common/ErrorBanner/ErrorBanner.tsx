@@ -23,13 +23,17 @@ const Container = styled.div`
   }
 `;
 
-function NotFound() {
+type ErrorBannerProps = {
+  message: string;
+};
+
+function ErrorBanner({ message }: ErrorBannerProps) {
   return (
     <Container>
       <img src={NotFoundImg} alt="Not Found Error" />
-      <p>잘못된 경로로 접근했어요!</p>
+      <p>{message}</p>
     </Container>
   );
 }
 
-export default NotFound;
+export default ErrorBanner;
