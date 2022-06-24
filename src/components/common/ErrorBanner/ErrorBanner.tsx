@@ -13,7 +13,7 @@ const Container = styled.div`
 
   & img {
     width: 90px;
-    height: 150px;
+    height: 140px;
   }
 
   & p {

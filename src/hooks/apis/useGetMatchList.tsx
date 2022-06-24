@@ -6,7 +6,7 @@ import { MatchListType } from "api";
 function useGetMatchList(nickname: string, matchType: MatchListType) {
   let matchList;
 
-  const option = { errorRetryCount: 3 };
+  const option = { errorRetryCount: 1 };
 
   const { data: user } = useSWR(
     nickname ? ["/users", nickname] : null,

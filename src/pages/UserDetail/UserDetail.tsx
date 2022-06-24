@@ -9,18 +9,17 @@ import Simulator from "@/components/Simulator";
 import MatchList from "@/components/MatchList";
 import TotalRecord from "@/components/TotalRecord";
 import RankChart from "@/components/RankChart";
+import ErrorBanner from "@/components/common/ErrorBanner";
 import * as S from "./style";
 
 function UserDetail() {
   const { nickname } = useParams();
   const [matchType, setMatchType] = useState<MatchListType>("solo");
 
-  const { user, data: matchList, error, isValidating } = useGetMatchList(nickname || "", matchType);
+  const { user, data: matchList, isValidating } = useGetMatchList(nickname || "", matchType);
 
   if (isValidating) return <Spinner />;
-  if (error) return <div>에러가 발생했습니다.</div>;
-  if (!matchList || matchList?.length === 0) return <div>해당 유저의 경기 정보가 없습니다.</div>;
-  if (!user) return <div>해당 유저가 없습니다.</div>;
+  if (!matchList || !user) return <ErrorBanner message="해당 유저와 경기정보가 없습니다." />;
 
   return (
     <S.Container>
