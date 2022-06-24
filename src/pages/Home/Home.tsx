@@ -14,19 +14,15 @@ const NewsContainer = styled.div`
   padding-bottom: 30px;
 `;
 
-const Section = styled.section`
-  background-color: #fafafa;
-`;
-
 function Home() {
   return (
-    <Section>
+    <section>
       <HomeBackground />
       <NewsContainer>
         <UpdateNews />
         <VideoNews />
       </NewsContainer>
-    </Section>
+    </section>
   );
 }
 
