@@ -43,7 +43,7 @@ export const Form = styled.form`
     position: absolute;
     left: 120px;
     top: 12px;
-    width: 300px;
+    width: 400px;
     font-size: 2.4rem;
     color: var(--color-white);
     background-color: transparent;
