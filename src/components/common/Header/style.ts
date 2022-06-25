@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
+  min-width: 1100px;
   background-color: var(--color-white);
 `;
 
 export const Head = styled.div`
-  max-width: 1100px;
+  width: 1100px;
   min-width: 1100px;
   margin: 0 auto;
   display: flex;

@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.nav<{ isTransparent: boolean }>`
-  position: relative;
   width: 100%;
+  min-width: 1100px;
+  position: relative;
   background-color: ${({ isTransparent }) => (isTransparent ? "transparent" : "#005fcc")};
   z-index: 100;
 `;
 
 export const Nav = styled.ul<{ isCurrentTab: boolean }>`
-  max-width: 1100px;
+  width: 1100px;
   min-width: 1100px;
   margin: 0 auto;
   display: flex;

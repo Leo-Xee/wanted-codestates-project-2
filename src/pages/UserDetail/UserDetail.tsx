@@ -19,7 +19,12 @@ function UserDetail() {
   const { user, data: matchList, isValidating } = useGetMatchList(nickname || "", matchType);
 
   if (isValidating) return <Spinner />;
-  if (!matchList || !user) return <ErrorBanner message="해당 유저와 경기정보가 없습니다." />;
+  if (!matchList || !user)
+    return (
+      <S.Container>
+        <ErrorBanner message="해당 유저와 경기정보가 없습니다." />
+      </S.Container>
+    );
 
   return (
     <S.Container>

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import background from "@/assets/background_flag_news.png";
 
 export const DefaultNewsContainer = styled.div`
-  max-width: 1100px;
   position: relative;
   margin-top: 560px;
   width: 500px;

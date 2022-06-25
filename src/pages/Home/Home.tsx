@@ -6,6 +6,10 @@ import styled from "styled-components";
 import VideoNews from "@/components/VideoNews";
 import { movingUp } from "@/components/HomeBackground/style";
 
+const Section = styled.section`
+  min-width: 1100px;
+`;
+
 const NewsContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -16,13 +20,13 @@ const NewsContainer = styled.div`
 
 function Home() {
   return (
-    <section>
+    <Section>
       <HomeBackground />
       <NewsContainer>
         <UpdateNews />
         <VideoNews />
       </NewsContainer>
-    </section>
+    </Section>
   );
 }
 

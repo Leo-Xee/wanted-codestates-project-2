@@ -83,6 +83,7 @@ export const Bazzi = styled.div`
 `;
 
 export const BazziCharacter = styled.img`
+  position: relative;
   width: 380px;
 `;
 

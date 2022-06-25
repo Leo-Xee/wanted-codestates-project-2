@@ -6,7 +6,7 @@ const extendingForm = keyframes`
 }
 
 100% {
-  width: 670px;
+  width: 650px;
 }
 `;
 
@@ -22,7 +22,7 @@ const appearingInput = keyframes`
 export const Form = styled.form`
   position: relative;
   margin-top: 50px;
-  width: 670px;
+  width: 650px;
   height: 70px;
   border: 4px solid var(--color-white);
   border-radius: 35px;
@@ -43,8 +43,8 @@ export const Form = styled.form`
     position: absolute;
     left: 120px;
     top: 12px;
-    width: 400px;
     font-size: 2.4rem;
+    width: 400px;
     color: var(--color-white);
     background-color: transparent;
     border: none;
