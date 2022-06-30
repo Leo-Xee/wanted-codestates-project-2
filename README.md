@@ -17,8 +17,6 @@
 
 이 프로젝트는 원티드 프리온보딩 프론트엔드 코스에서 개인 과제로 주어져 진행하게된 프로젝트입니다. 카트라이더 OpenAPI를 활용해서 유저의 닉네임을 검색해 해당 유저의 정보와 최근 전적을 계산한 결과를 시각적인 통계로 보여줄 수 있도록 구현했습니다. 또한 도메인의 특성을 고려해서 애니메이션을 최대한 적용했습니다.
 
-
-
 <br />
 
 
@@ -71,16 +69,62 @@
 
 <img width="469" alt="Screen Shot 2022-06-30 at 19 11 31" src="https://user-images.githubusercontent.com/21965795/176653596-5af83c06-3dbf-414c-b418-b89942e791d2.png">
 
-유저의 전적 통계를 시각적으로 보여주기 위한 컴포넌트로 Circular Progress Bar를 사용하기로 결정했습니다. 이를 react-circular-progressbar와 같은 라이브러리를 사용하는 방법도 있었지만 저는 구현 및 동작 방법을 이 기회에 파악해보고자 직접 구현을 해서 사용해봤습니다.
+유저의 전적 통계를 보여주기 위한 컴포넌트로 Circular Progress Bar를 사용하기로 결정했습니다. 이를 react-circular-progressbar와 같은 라이브러리를 사용하는 방법도 있었지만 저는 구현 및 동작 방법을 이 기회에 파악해보고자 직접 구현을 해서 사용해봤습니다.
 
 
 ### ✅ Chart.js를 활용해서 최근 순위 히스토리 구현
 
 <img width="622" alt="Screen Shot 2022-06-30 at 19 11 21" src="https://user-images.githubusercontent.com/21965795/176653478-8e679199-8d5f-4e43-8162-d03d6e8047c0.png">
 
-유저의 최근 순위 추이를 시각적으로
+유저의 최근 순위 히스토리를 차트로 보여주기 위해서 차트 라이브러리 중에 chart.js와 d3.js를 후보에 두었습니다. 하지만 현재 차트로 구현해야할 기능이 한정적이라고 판단해서 러닝 커브가 상대적으로 낮은 chart.js를 채택했습니다. 그래서 chart.js와 react-chartjs-2를 사용해서 유저의 순위 히스토리 컴포넌트를 구현했습니다.
 
 ### ✅ 메인 화면에 불필요한 페이지를 Lazy Loading 처리
+
+배포된 애플리케이션을 LightHouse로 측정했고 이 때 불필요한 Javascript 파일이 있다는 진단을 받았습니다. 그래서 분석해본 결과, 메인 페이지에서 굳이 유저 상세 페이지에서 사용되는 chart.js와 같은 의존성을 메인 페이지와 함께 로드할 필요가 없다고 판단했습니다. 그래서 메인 페이지가 아닌 페이지들을 Lazy Loading 처리하고 메인 페이지가 모두 렌더링 된 다음에 로드하도록 최적화했습니다. 이를 통해서 LightHouse의 Performance 지수를 개선했습니다.
+
+```tsx
+import React, { Suspense, lazy, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "@/pages/Home";
+import Layout from "./components/common/Layout/Layout";
+
+const LazyUserDetail = lazy(() => import("@/pages/UserDetail"));
+const LazyNotFound = lazy(() => import("./pages/NotFound"));
+
+function App() {
+  useEffect(() => {
+    import("./pages/UserDetail");
+    import("./pages/NotFound");
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/users/:nickname"
+            element={
+              <Suspense fallback="...">
+                <LazyUserDetail />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback="...">
+                <LazyNotFound />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+```
+
 
 <br />
 
