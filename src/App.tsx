@@ -2,15 +2,15 @@ import React, { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@/pages/Home";
-import Layout from "./components/common/Layout/Layout";
+import Layout from "@/components/common/Layout/Layout";
 
 const LazyUserDetail = lazy(() => import("@/pages/UserDetail"));
-const LazyNotFound = lazy(() => import("./pages/NotFound"));
+const LazyNotFound = lazy(() => import("@/pages/NotFound"));
 
 function App() {
   useEffect(() => {
-    import("./pages/UserDetail");
-    import("./pages/NotFound");
+    import("@/pages/UserDetail");
+    import("@/pages/NotFound");
   }, []);
 
   return (
