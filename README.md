@@ -32,7 +32,8 @@
 
 ## 🌲 디렉터리 구조
 
-```
+```![user](https://user-images.githubusercontent.com/21965795/176655746-4290bba7-6626-4510-8724-f558474628c3.gif)
+
 ├── public            
 └── src
     ├── @types        // 타입
@@ -57,12 +58,27 @@
 
 ### ✅ SWR을 사용해서 서버상태 관리
 
+요구 사항을 구현하기 위해 필요한 API 요청이 많지 않아서 최대한 쉽게 사용할 수 있고 캐시를 활용할 수 있는 SWR을 채택해서 사용햇습니다.
 
 ### ✅ 게임 도메인을 고려해 애니메이션을 최대한 활용
 
+![main](https://user-images.githubusercontent.com/21965795/176651665-395accb9-ac84-49d7-9b90-6e41262577c6.gif)
+![user](https://user-images.githubusercontent.com/21965795/176655855-1ef25361-7bd2-4349-9beb-4247970348ad.gif)
+
+게임 도메인을 고려해서 동적인 요소가 최대한 포함되었으면 하는 생각이 있었습니다. 그래서 구현 시에 애니메이션을 최대한 사용하도록 노력했습니다.
+
 ### ✅ 전적 통계를 위한 Circular Progress Bar 구현
 
+<img width="469" alt="Screen Shot 2022-06-30 at 19 11 31" src="https://user-images.githubusercontent.com/21965795/176653596-5af83c06-3dbf-414c-b418-b89942e791d2.png">
+
+유저의 전적 통계를 시각적으로 보여주기 위한 컴포넌트로 Circular Progress Bar를 사용하기로 결정했습니다. 이를 react-circular-progressbar와 같은 라이브러리를 사용하는 방법도 있었지만 저는 구현 및 동작 방법을 이 기회에 파악해보고자 직접 구현을 해서 사용해봤습니다.
+
+
 ### ✅ Chart.js를 활용해서 최근 순위 히스토리 구현
+
+<img width="622" alt="Screen Shot 2022-06-30 at 19 11 21" src="https://user-images.githubusercontent.com/21965795/176653478-8e679199-8d5f-4e43-8162-d03d6e8047c0.png">
+
+유저의 최근 순위 추이를 시각적으로
 
 ### ✅ 메인 화면에 불필요한 페이지를 Lazy Loading 처리
 
