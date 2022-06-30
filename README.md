@@ -1,6 +1,6 @@
 
 <h1 align="middle">2022 원티드 프리온보딩 프론트엔드 코스 기업과제 - 넥슨코리아</h1>
-<p align="middle">React와 OpenAPI로 구현하는 카트라이더 전적 조회 애플리케이션</p>
+<p align="middle">React와 OpenAPI로 구현하는 카트라이더 전적조회 애플리케이션</p>
 <p align="middle">
   <img src="https://img.shields.io/badge/version-1.0.0-yellow?style=flat-square" alt="template version"/>
   <a href="https://github.com/daybrush/moveable/blob/master/LICENSE" target="_blank">
@@ -12,6 +12,12 @@
 
 
 ## 🔥 소개 ( [Demo](https://wanted-codestates-project-2.vercel.app/) )
+
+**카트라이더 전적조회 애플리케이션은 카트라이더 유저를 검색하고 최근 전적과 통계를 확인해볼 수 있는 데스크탑 애플리케이션입니다.**
+
+이 프로젝트는 원티드 프리온보딩 프론트엔드 코스에서 개인 과제로 주어졌던 프로젝트였습니다. 
+
+
 
 <br />
 
@@ -49,16 +55,18 @@
 
 ## ⚙️ 주요 내용
 
-### ✅ Next 기반의 SSR
-### ✅ Next 기반의 SSR
-### ✅ Next 기반의 SSR
-### ✅ Next 기반의 SSR
-### ✅ Next 기반의 SSR
+### ✅ 
+
+### ✅ 
+### ✅ 
 
 <br />
 
 ## 🎨 LightHouse 측정
+![Screen Shot 2022-06-30 at 17 44 31](https://user-images.githubusercontent.com/21965795/176633973-1a682642-7a87-4e00-931e-1743f1dbc3ff.png)
 
 <br />
 
 ## 🌐 링크
+- [Web VSCode](https://github.dev/Leo-Xee/wanted-codestates-project-2)
+
