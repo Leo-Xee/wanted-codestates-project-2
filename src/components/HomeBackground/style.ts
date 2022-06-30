@@ -89,8 +89,6 @@ export const BazziCharacter = styled.img`
 
 export const BazziBg = styled.img`
   position: absolute;
-  width: 500px;
-  height: 300px;
   top: 0px;
   left: -50px;
 `;
@@ -116,7 +114,6 @@ export const DaoCharacter = styled.img`
 
 export const DaoBg = styled.img`
   position: absolute;
-  width: 500px;
-  height: 320px;
   top: 0px;
+  left: -50px;
 `;

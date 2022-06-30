@@ -38,7 +38,7 @@ function Search() {
       <label htmlFor="search">
         <input id="search" type="search" placeholder="S1법사케피를 입력해보세요." ref={inputRef} />
       </label>
-      <button type="submit">
+      <button aria-label="유저 검색" type="submit">
         <Tmi />
       </button>
     </S.Form>
